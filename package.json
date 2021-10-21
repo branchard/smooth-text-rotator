@@ -1,23 +1,22 @@
 {
-  "name": "typescript-boilerplate-2021",
-  "version": "0.4.2",
-  "description": "Boilerplate for TypeScript projects (Node.js and browser modules)",
-  "author": "Chris Hager <chris@linuxuser.at>",
-  "repository": "https://github.com/metachris/typescript-boilerplate",
+  "name": "smooth-text-rotator",
+  "version": "0.0.0",
+  "description": "Super simple JS library for rotating text with smooth animations",
+  "author": "Branchard <benoit.branchard@gmail.com>",
+  "repository": "https://github.com/branchard/smooth-text-rotator",
   "license": "MIT",
   "keywords": [
-    "typescript",
-    "boilerplate",
-    "esbuild"
+    "smooth",
+    "text",
+    "rotator",
+    "rotating",
+    "slider",
+    "browser"
   ],
   "main": "./dist/tsc/main.js",
   "types": "./dist/tsc/main.d.ts",
   "browser": "./dist/esbuild/browser.js",
-  "bin": {
-    "my-cli-tool": "./dist/esbuild/cli.js"
-  },
   "scripts": {
-    "cli": "ts-node src/cli.ts",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
     "clean": "rm -rf dist build package",

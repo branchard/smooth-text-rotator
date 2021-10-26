@@ -5,6 +5,7 @@
 /tmp/
 .idea/*
 /docs/
+/playground/
 
 coverage
 *.log

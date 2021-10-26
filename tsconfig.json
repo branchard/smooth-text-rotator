@@ -15,8 +15,8 @@
     "importHelpers": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": false,
+    "experimentalDecorators": false,
     "sourceMap": true,
     "outDir": "./dist/tsc/",
     "types": [

@@ -1,4 +1,7 @@
 import {TextRotator} from './text-rotator'
+import ResizeObserver from 'resize-observer-polyfill';
+
+global.ResizeObserver = ResizeObserver;
 
 const domBody =
   '<h1>' +

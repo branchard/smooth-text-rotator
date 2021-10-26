@@ -1,6 +1,6 @@
 {
   "name": "smooth-text-rotator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Super simple JS library for rotating text with smooth animations",
   "author": "Branchard <benoit.branchard@gmail.com>",
   "repository": "https://github.com/branchard/smooth-text-rotator",

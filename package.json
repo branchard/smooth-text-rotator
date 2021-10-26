@@ -5,6 +5,9 @@
   "author": "Branchard <benoit.branchard@gmail.com>",
   "repository": "https://github.com/branchard/smooth-text-rotator",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/branchard/smooth-text-rotator/issues"
+  },
   "keywords": [
     "smooth",
     "text",

@@ -46,9 +46,11 @@ export class TextRotator {
     this.options.element.innerText = "";
     phrases.forEach((phrase, index) => {
       const child = document.createElement('span');
-      // child.style.opacity = index > 0 ? "0" : "1";
       if (index > 0) {
         child.style.opacity = "0";
+        child.setAttribute("aria-hidden", "true");
+        child.style.pointerEvents = "none";
+        child.style.userSelect = "none";
         child.style.position = "absolute";
         child.style.top = "0";
         child.style.left = "0";
@@ -148,8 +150,20 @@ export class TextRotator {
   }
 
   private displayPhrase(index: number) {
-    this.phraseElements[index === 0 ? this.phraseElements.length - 1 : index - 1].style.opacity = '0';
+    // hide previously displayed element
+    const phraseElementToHideIndex = index === 0 ? this.phraseElements.length - 1 : index - 1;
+    this.phraseElements[phraseElementToHideIndex].style.opacity = '0';
+    this.phraseElements[phraseElementToHideIndex].setAttribute("aria-hidden", "true");
+    this.phraseElements[phraseElementToHideIndex].style.pointerEvents = "none";
+    this.phraseElements[phraseElementToHideIndex].style.userSelect = "none";
+
+    // set the width of the parent span according to the width of the child to display
     this.options.element.style.width = `${this.phraseElements[index].offsetWidth}px`;
+
+    // display the phrase to display
     this.phraseElements[index].style.opacity = '1';
+    this.phraseElements[index].removeAttribute("aria-hidden");
+    this.phraseElements[index].style.pointerEvents = '';
+    this.phraseElements[index].style.userSelect = '';
   }
 }

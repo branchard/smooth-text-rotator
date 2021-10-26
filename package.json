@@ -34,6 +34,7 @@
     "esbuild": "^0.13.8",
     "eslint": "^8.0.1",
     "jest": "^27.3.1",
+    "resize-observer-polyfill": "^1.5.1",
     "ts-jest": "^27.0.7",
     "typedoc": "^0.22.6",
     "typescript": "^4.4.4",

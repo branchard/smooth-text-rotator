@@ -15,7 +15,7 @@ export class TextRotator {
   private readonly phraseElements: HTMLSpanElement[];
   private index: number;
   private intervalID: number | null = null;
-  private started: boolean = false;
+  private started = false;
 
   constructor(options: Options) {
     this.options = {

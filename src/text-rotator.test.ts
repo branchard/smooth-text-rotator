@@ -1,7 +1,22 @@
 import {TextRotator} from './text-rotator'
-import ResizeObserver from 'resize-observer-polyfill';
 
-global.ResizeObserver = ResizeObserver;
+// Mock resize observer
+const mockResizeObserver = jest.fn();
+mockResizeObserver.mockReturnValue({
+  observe: () => null,
+  unobserve: () => null,
+  disconnect: () => null
+});
+global.ResizeObserver = mockResizeObserver;
+
+// Mock intersection observer
+const mockIntersectionObserver = jest.fn();
+mockIntersectionObserver.mockReturnValue({
+  observe: () => null,
+  unobserve: () => null,
+  disconnect: () => null
+});
+global.IntersectionObserver = mockIntersectionObserver;
 
 const domBody =
   '<h1>' +

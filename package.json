@@ -36,9 +36,7 @@
     "typescript": "^4.4.4",
     "vite": "^2.6.10"
   },
-  "dependencies": {
-    "type-guards": "^0.15.0"
-  },
+  "dependencies": {},
   "jest": {
     "testEnvironment": "jsdom",
     "roots": [

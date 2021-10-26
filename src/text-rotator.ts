@@ -1,4 +1,4 @@
-import {isArrayOf, isString} from 'type-guards'
+import {isArrayOfString} from "./type-guards";
 
 type Options = {
   // TODO
@@ -31,7 +31,7 @@ export class TextRotator {
     const phrases: unknown = JSON.parse(this.options.element.dataset.phrases);
 
     // Check if the parsed json is an array of string
-    if (!(Array.isArray(phrases) && isArrayOf(isString)(phrases))) {
+    if (!isArrayOfString(phrases)) {
       throw {
         error: new Error(`The 'phrases' data attribute in the passed element is not a JSON that is an array of string`),
         element: this.options.element

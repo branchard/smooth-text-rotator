@@ -47,10 +47,6 @@ export class TextRotator {
     phrases.forEach((phrase, index) => {
       const child = document.createElement('span');
       if (index > 0) {
-        child.style.opacity = "0";
-        child.setAttribute("aria-hidden", "true");
-        child.style.pointerEvents = "none";
-        child.style.userSelect = "none";
         child.style.position = "absolute";
         child.style.top = "0";
         child.style.left = "0";
@@ -66,9 +62,10 @@ export class TextRotator {
     this.options.element.style.display = 'inline-block';
     this.options.element.style.position = 'relative';
     this.options.element.style.transition = 'width .5s cubic-bezier(.23,1,.32,1)';
-    this.displayPhrase(0);
+    this.resetPhrases();
+
     this.setupResizeObserver();
-    if(this.options.automaticPause){
+    if (this.options.automaticPause) {
       this.setupIntersectionObserver();
     }
 
@@ -85,7 +82,11 @@ export class TextRotator {
   public stop(): void {
     this.started = false;
     this.index = 0;
-    this.stopInterval();
+    this.resetPhrases();
+    // If the rotator is paused, the interval is already stopped
+    if (this.intervalID) {
+      this.stopInterval();
+    }
   }
 
   public pause(): void {
@@ -151,19 +152,45 @@ export class TextRotator {
 
   private displayPhrase(index: number) {
     // hide previously displayed element
-    const phraseElementToHideIndex = index === 0 ? this.phraseElements.length - 1 : index - 1;
-    this.phraseElements[phraseElementToHideIndex].style.opacity = '0';
-    this.phraseElements[phraseElementToHideIndex].setAttribute("aria-hidden", "true");
-    this.phraseElements[phraseElementToHideIndex].style.pointerEvents = "none";
-    this.phraseElements[phraseElementToHideIndex].style.userSelect = "none";
+    this.hidePhrase(index === 0 ? this.phraseElements.length - 1 : index - 1);
 
     // set the width of the parent span according to the width of the child to display
-    this.options.element.style.width = `${this.phraseElements[index].offsetWidth}px`;
+    this.setWidth(index);
 
     // display the phrase to display
+    this.showPhrase(index);
+  }
+
+  private showPhrase(index: number) {
     this.phraseElements[index].style.opacity = '1';
     this.phraseElements[index].removeAttribute("aria-hidden");
     this.phraseElements[index].style.pointerEvents = '';
     this.phraseElements[index].style.userSelect = '';
+  }
+
+  private hidePhrase(index: number) {
+    this.phraseElements[index].style.opacity = '0';
+    this.phraseElements[index].setAttribute("aria-hidden", "true");
+    this.phraseElements[index].style.pointerEvents = "none";
+    this.phraseElements[index].style.userSelect = "none";
+  }
+
+  private setWidth(index: number) {
+    this.options.element.style.width = `${this.phraseElements[index].offsetWidth}px`;
+  }
+
+  /**
+   * Hide all the phrases, show the first one and set the width
+   * @private
+   */
+  private resetPhrases() {
+    for (let i = 0; i < this.phraseElements.length; i++) {
+      if (i === 0) {
+        this.setWidth(i);
+        this.showPhrase(i);
+      } else {
+        this.hidePhrase(i);
+      }
+    }
   }
 }

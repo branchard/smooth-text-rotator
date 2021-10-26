@@ -13,18 +13,15 @@
     "slider",
     "browser"
   ],
-  "main": "./dist/tsc/main.js",
-  "types": "./dist/tsc/main.d.ts",
-  "browser": "./dist/esbuild/browser.js",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
   "scripts": {
     "dev": "vite serve playground",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
     "clean": "rm -rf dist build package",
     "docs": "typedoc --entryPoints src/main.ts",
-    "build": "tsc -p tsconfig.json",
-    "esbuild-browser": "esbuild src/browser.ts --bundle --minify --sourcemap=external --outfile=dist/esbuild/browser.js",
-    "build-all": "yarn clean && yarn build && yarn esbuild-browser"
+    "build": "yarn clean && tsc -p tsconfig.json"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
@@ -32,7 +29,6 @@
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "esbuild": "^0.13.8",
-    "eslint": "^8.0.1",
     "jest": "^27.3.1",
     "resize-observer-polyfill": "^1.5.1",
     "ts-jest": "^27.0.7",

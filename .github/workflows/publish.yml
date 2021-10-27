@@ -1,9 +1,12 @@
-name: Lint and test
+name: Publish the package on npmjs.com and release it on github.com
 
-on: [ push, pull_request ]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  build_and_test:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,3 +19,6 @@ jobs:
       - run: yarn test
       - run: yarn lint
       - run: yarn build
+      - name: Release on github.com
+        uses: softprops/action-gh-release@v1
+      - run: yarn publish

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style/index.scss">
+  <title>Smooth Text Rotator</title>
+</head>
+<body>
+<header class="demo" id="demo-first">
+  <h1>
+    Super <span class="text-rotator" id="text-rotator-first"
+                data-phrases='["Smooth","Simple","Light Weight","Easy"]'>Smooth</span> Text Rotator
+  </h1>
+</header>
+<div id="doc" class="markdown-body">
+  <%- include('../../README.md'); %>
+</div>
+<div class="demo" id="demo-second">
+  <h2>
+    Super <span class="text-rotator" id="text-rotator-second"
+                data-phrases='["Customizable","Simple","Easy"]'>Customizable</span> Transitions
+  </h2>
+</div>
+<div class="demo" id="demo-third">
+  <h2>
+    Auto <span class="text-rotator" id="text-rotator-third"
+                data-phrases='["Pausing","Waiting","Halting"]'>Pausing</span> Rotations
+  </h2>
+</div>
+<div class="demo" id="demo-fourth">
+  <h2>
+    Smooth <span class="text-rotator" id="text-rotator-fourth"
+                data-phrases='["Font Size","Font Family"]'>Font Size</span> Changes Handling
+  </h2>
+</div>
+<footer>
+  © 2021 MIT License
+</footer>
+<script type="module" src="./index.ts"></script>
+</body>
+</html>

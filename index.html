@@ -1,5 +1,173 @@
-<!DOCTYPE html><html class="default no-js"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>smooth-text-rotator</title><meta name="description" content="Documentation for smooth-text-rotator"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem(&quot;tsd-theme&quot;) || &quot;os&quot;)</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">smooth-text-rotator</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>smooth-text-rotator</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
-<a href="#smooth-text-rotator" id="smooth-text-rotator" style="color: inherit; text-decoration: none;">
-  <h1>Smooth Text Rotator</h1>
-</a>
-</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/TextRotator.html" class="tsd-kind-icon">Text<wbr/>Rotator</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li><li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Smooth Text Rotator</title>
+  <script type="module" crossorigin src="/assets/index.88c4d3b3.js"></script>
+  <link rel="stylesheet" href="/assets/index.ecf668ec.css">
+</head>
+<body>
+<header class="demo" id="demo-first">
+  <h1>
+    Super <span class="text-rotator" id="text-rotator-first"
+                data-phrases='["Smooth","Simple","Light Weight","Easy"]'>Smooth</span> Text Rotator
+  </h1>
+</header>
+<div id="doc" class="markdown-body">
+  <h1 id="smooth-text-rotator">Smooth Text Rotator</h1>
+<p>A simple, smooth and lightweight rotating text library.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>No dependencies</strong>: Doesn&#39;t depend on any NPM library</li>
+<li><strong>Transitions effects</strong>: Smooth fade on phrase change</li>
+<li><strong>Font-family and font-size changes handling</strong>: Adjust the width of the space reserved by the rotating space if a font change occur</li>
+<li><strong>Automatic pause</strong>: Pause the rotating text when it is no longer visible on the screen</li>
+<li><strong>Accessibility</strong>: An <code>aria-hidden</code> attribute is added to the phrases which are not visible</li>
+<li><strong>Built-in TypeScript declarations</strong></li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p><code>npm install smooth-text-rotator</code> or <code>yarn add smooth-text-rotator</code></p>
+<h3 id="indexhtml">index.html</h3>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>My <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">data-phrases</span>=<span class="hljs-string">&#x27;[&quot;super&quot;,&quot;beautiful&quot;,&quot;sensational&quot;]&#x27;</span>&gt;</span>super<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> title<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<h3 id="indexjs">index.js</h3>
+<pre><code class="language-js"><span class="hljs-keyword">import</span> {<span class="hljs-title class_">TextRotator</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;smooth-text-rotator&quot;</span>;
+
+<span class="hljs-keyword">const</span> textRotator = <span class="hljs-keyword">new</span> <span class="hljs-title class_">TextRotator</span>({<span class="hljs-attr">element</span>: <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;span[data-phrases]&#x27;</span>)});
+textRotator.<span class="hljs-title function_">start</span>();
+</code></pre>
+<h2 id="options">Options</h2>
+<p>Options can be passed when you instantiate a new <code>TextRotator</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Default</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">element (<em>required</em>)</td>
+<td align="left"><code>HtmlSpanElement</code></td>
+<td align="left"></td>
+<td align="left">The element on which the text must rotate</td>
+</tr>
+<tr>
+<td align="left">interval</td>
+<td align="left"><code>number</code></td>
+<td align="left"><code>4000</code></td>
+<td align="left">The time between each rotation in milliseconds</td>
+</tr>
+<tr>
+<td align="left">automaticPause</td>
+<td align="left"><code>boolean</code></td>
+<td align="left"><code>true</code></td>
+<td align="left">Pause the rotating text when it is no longer visible on the screen</td>
+</tr>
+<tr>
+<td align="left">fadeTransitionDuration</td>
+<td align="left"><code>number</code></td>
+<td align="left"><code>200</code></td>
+<td align="left">The duration of the opacity transition</td>
+</tr>
+<tr>
+<td align="left">fadeTransitionTimingFunction</td>
+<td align="left"><code>string</code></td>
+<td align="left"><code>ease</code></td>
+<td align="left">The timing function of the opacity transition</td>
+</tr>
+<tr>
+<td align="left">widthTransitionDuration</td>
+<td align="left"><code>number</code></td>
+<td align="left"><code>350</code></td>
+<td align="left">The duration of the width transition</td>
+</tr>
+<tr>
+<td align="left">widthTransitionTimingFunction</td>
+<td align="left"><code>string</code></td>
+<td align="left"><code>ease</code></td>
+<td align="left">The timing function of the width transition</td>
+</tr>
+</tbody></table>
+<h2 id="methods">Methods</h2>
+<p>Methods that can be called on <code>TextRotator</code> instance.</p>
+<ul>
+<li><code>start()</code>: Start the text rotation or restart to the first phrase</li>
+<li><code>stop()</code>: Stop the text rotation and display the first phrase</li>
+<li><code>pause()</code>: Pause the text rotation</li>
+<li><code>resume()</code>: Resume the text rotation</li>
+<li><code>next()</code>: Rotate to the next phrase</li>
+<li><code>previous()</code>: Rotate to the previous phrase</li>
+<li><code>select(index)</code>: Go to a specific phrase</li>
+<li><code>prepend(phrase)</code>: Prepend a phrase</li>
+<li><code>append(phrase)</code>: Append a phrase</li>
+<li><code>insert(phrase, index)</code>: Insert a phrase at a specific index</li>
+<li><code>remove(index)</code>: Remove a phrase</li>
+</ul>
+<h2 id="events">Events</h2>
+<p>Specific events can be listened with <code>addEventListened(name: string, callback: (event) =&gt; void)</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Callback event object</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">start</td>
+<td align="left"><code>{currentIndex: number, currentPhraseElement: HTMLSpanElement}</code></td>
+<td align="left">Occur when the phrases rotation starts</td>
+</tr>
+<tr>
+<td align="left">stop</td>
+<td align="left"><code>{currentIndex: number, currentPhraseElement: HTMLSpanElement}</code></td>
+<td align="left">Occur when the phrases rotation stops</td>
+</tr>
+<tr>
+<td align="left">rotation</td>
+<td align="left"><code>{previousIndex: number, previousPhraseElement: HTMLSpanElement, nextIndex: number, nextPhraseElement: HTMLSpanElement}</code></td>
+<td align="left">Occur when the text is rotating</td>
+</tr>
+<tr>
+<td align="left">widthUpdate</td>
+<td align="left"><code>{currentIndex: number, currentPhraseElement: HTMLSpanElement, previousWidth: number, nextWidth: number}</code></td>
+<td align="left">Occur when the parent width is updated</td>
+</tr>
+</tbody></table>
+<h2 id="development">Development</h2>
+<ul>
+<li><code>yarn install</code></li>
+<li><code>yarn dev</code></li>
+</ul>
+
+</div>
+<div class="demo" id="demo-second">
+  <h2>
+    Super <span class="text-rotator" id="text-rotator-second"
+                data-phrases='["Customizable","Simple","Easy"]'>Customizable</span> Transitions
+  </h2>
+</div>
+<div class="demo" id="demo-third">
+  <h2>
+    Auto <span class="text-rotator" id="text-rotator-third"
+                data-phrases='["Pausing","Waiting","Halting"]'>Pausing</span> Rotations
+  </h2>
+</div>
+<div class="demo" id="demo-fourth">
+  <h2>
+    Smooth <span class="text-rotator" id="text-rotator-fourth"
+                data-phrases='["Font Size","Font Family"]'>Font Size</span> Changes Handling
+  </h2>
+</div>
+<footer>
+  © 2021 MIT License
+</footer>
+
+</body>
+</html>

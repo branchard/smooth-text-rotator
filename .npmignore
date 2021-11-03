@@ -3,16 +3,19 @@
 /node_modules/
 /build/
 /tmp/
-.idea/*
+/.idea/
 /docs/
 /playground/
 
 coverage
 *.log
 .gitlab-ci.yml
+.eslintrc.js
+.editorconfig
+tsconfig.json
 
 package-lock.json
 /*.tgz
-/tmp*
+/tmp/
 /mnt/
 /package/

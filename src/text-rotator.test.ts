@@ -125,9 +125,9 @@ test('is instantiable', () => {
   expect(textRotator).toBeInstanceOf(TextRotator);
 });
 
-test('it pause when is not intersecting', () => {
-
-});
+// test('it pause when is not intersecting', () => {
+//
+// });
 
 
 // test('resize observer is setup', () => {

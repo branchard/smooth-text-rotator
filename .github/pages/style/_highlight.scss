@@ -1,0 +1,24 @@
+code {
+  color: var(--color-fg-default);
+  background-color: var(--color-canvas-default);
+}
+
+.hljs-keyword, .hljs-link, .hljs-literal, .hljs-section, .hljs-selector-tag {
+  color: var(--color-prettylights-syntax-keyword);
+}
+
+.hljs-addition, .hljs-attribute, .hljs-built_in, .hljs-bullet, .hljs-name, .hljs-string, .hljs-symbol, .hljs-template-tag, .hljs-template-variable, .hljs-title, .hljs-type, .hljs-variable {
+  color: var(--color-prettylights-syntax-string);
+}
+
+.hljs-comment, .hljs-deletion, .hljs-meta, .hljs-quote {
+  color: var(--color-prettylights-syntax-comment);
+}
+
+//.hljs-doctag, .hljs-keyword, .hljs-literal, .hljs-name, .hljs-section, .hljs-selector-tag, .hljs-strong, .hljs-title, .hljs-type {
+//  font-weight: bold;
+//}
+
+.hljs-emphasis {
+  font-style: italic;
+}

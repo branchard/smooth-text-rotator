@@ -3,7 +3,8 @@
 /lib/
 /dist/
 /docs/
-.idea/*
+/.idea/
+/.github/pages/dist/
 
 .DS_Store
 coverage

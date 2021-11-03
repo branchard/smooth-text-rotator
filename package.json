@@ -2,7 +2,7 @@
   "name": "smooth-text-rotator",
   "version": "0.2.1",
   "description": "Super simple JS library for rotating text with smooth animations",
-  "author": "Branchard <benoit.branchard@gmail.com>",
+  "author": "B. Branchard <benoit.branchard@gmail.com>",
   "repository": "https://github.com/branchard/smooth-text-rotator",
   "license": "MIT",
   "bugs": {
@@ -14,7 +14,8 @@
     "rotator",
     "rotating",
     "slider",
-    "browser"
+    "browser",
+    "frontend"
   ],
   "main": "./dist/main.js",
   "types": "./dist/main.d.ts",
@@ -23,16 +24,21 @@
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
     "clean": "rm -rf dist build package",
-    "docs": "typedoc --entryPoints src/main.ts",
-    "build": "yarn clean && tsc -p tsconfig.json"
+    "build": "yarn clean && tsc -p tsconfig.json",
+    "pages:dev": "vite serve .github/pages",
+    "pages:build": "vite build .github/pages"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
+    "@types/marked": "^3.0.2",
     "@types/node": "^16.11.3",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "eslint": "^8.1.0",
+    "highlight.js": "^11.3.1",
     "jest": "^27.3.1",
+    "marked": "^3.0.8",
+    "sass": "^1.43.4",
     "ts-jest": "^27.0.7",
     "typedoc": "^0.22.6",
     "typescript": "^4.4.4",
